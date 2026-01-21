@@ -1,1 +1,12 @@
 /* Add CSS Styling */
+.loud {
+    background-color: black;
+    color: white;
+}
+.louder {
+    background-color: yellow;
+}
+.loud, .louder {
+    font-size: 28px;
+    font-family: 'Helvetica', 'Times New Roman', sans-serif;
+}
