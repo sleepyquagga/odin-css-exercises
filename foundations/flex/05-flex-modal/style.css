@@ -20,6 +20,10 @@ body {
   width: 480px;
   border-radius: 10px;
   box-shadow: 2px 4px 16px rgba(0,0,0,.2);
+  /* Added styles */
+  display: flex;
+  padding: 16px;
+  gap: 16px;
 }
 
 .icon {
@@ -33,6 +37,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Added styles */
+  flex-shrink: 0;
+  flex-grow: 0;
 }
 
 .close-button {
@@ -48,12 +55,17 @@ body {
   justify-content: center;
   border: 1px solid #eee;
   padding: 0;
+  /* Added styles */
+  /* margin-left: auto; */
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 button {
   cursor: pointer;
   padding: 8px 16px;
   border-radius: 8px;
+  
 }
 
 button.continue {
@@ -67,3 +79,24 @@ button.cancel {
   border: 1px solid #ddd;
   color: royalblue;
 }
+
+/* Added styles for my solution */
+.modal-body {
+  /* display: flex;
+  flex-direction: column;
+  gap: 16px; */
+}
+
+/*  When I added flex to the .modal-body, it made it so that the buttons would take up the width of the .modal-body container which meant that I had to fix that by putting a div around the buttons so that they would display in-line. Without adding flex to .modal-body, the children won't flex and stretch and follow the usual block flow which means the buttons are the size of their contents.  */
+
+/* Added styles for my solution*/
+.header{
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  /* Solution style */
+  justify-content: space-between;
+}
+
+/* I added margin: auto to the .close-button but the solution used justify-content: space-between on .header to achieve this which makes sense. Justify-content: space-between pushes the children to the edges of the parent and distributes the space in between. In this case, it moves the elements to their desired positions of flush against the left and flush against the right.  */
