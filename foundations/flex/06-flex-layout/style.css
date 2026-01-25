@@ -29,6 +29,50 @@ input {
   width: 400px;
 }
 
+/* Provided Solution */
+
+/* body {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  padding: 8px 16px;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+.header,
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.footer {
+  background: #eee;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 16px
+} */
+
 /* My Solution */
 
 .header {
@@ -77,3 +121,10 @@ input {
   display: flex;
   gap: 16px;
 }
+
+/* After comparing with the solution, all in all, what I had was almost exactly the same. I used justify-content:space-between to get the footer to the bottom but they used flex:1 on .content which evaluates to flex-grow:1, flex-shrink:1, flex-basis:0%. Since there is only one element, the content would take up 100% of the share. Additionally, when flex-basis:0% -- 
+
+"...with flex-basis: 0%, the <section> element has an initial main size of 300px because, as the flex container doesn't have a set height, the percentage flex-basis values resolve to the content value."
+Source: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex-basis#flex_basis_0_vs_0
+
+I could have also condensed the styles for the header and footer into one declaration because they do share a lot of overlap.*/
